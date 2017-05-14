@@ -1,0 +1,33 @@
+{
+  "name": "react-virtualscroll",
+  "version": "0.0.0",
+  "description": "Virtual scroll for react with multi-colum support",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rintoj/react-virtualscroll.git"
+  },
+  "keywords": [
+    "VirtualScroll",
+    "React"
+  ],
+  "author": "Rinto Jose",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rintoj/react-virtualscroll/issues"
+  },
+  "homepage": "https://github.com/rintoj/react-virtualscroll#readme",
+  "devDependencies": {
+    "@types/react": "^15.0.24",
+    "rimraf": "^2.6.1",
+    "tslint": "^5.2.0",
+    "typescript": "^2.3.2"
+  },
+  "dependencies": {
+    "react": "^15.5.4"
+  }
+}
