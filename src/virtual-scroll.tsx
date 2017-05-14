@@ -64,8 +64,9 @@ export class VirtualScroll extends React.Component<Props, State> {
   }
 
   componentWillReceiveProps(props) {
-    if (props.items != undefined && this.props.items == undefined || this.props.items.length === 0) {
-      this.startupLoop = true
+    if (props.items !== this.props.items) {
+      this.previousStart = undefined
+      this.previousEnd = undefined
     }
     this.refresh()
   }
@@ -170,8 +171,8 @@ export class VirtualScroll extends React.Component<Props, State> {
     const topPadding = d.childHeight * Math.ceil(start / d.itemsPerRow)
     this.setState({ topPadding, scrollHeight })
 
-    start = !isNaN(start) ? start : -1
-    end = !isNaN(end) ? end : -1
+    start = !isNaN(start) ? start : 0
+    end = !isNaN(end) ? end : 0
     if (start !== this.previousStart || end !== this.previousEnd) {
 
       // update the scroll list
@@ -210,6 +211,9 @@ export class VirtualScroll extends React.Component<Props, State> {
 
     } else if (this.startupLoop === true) {
       this.startupLoop = false
+      if (typeof this.props.onChange === 'function') {
+        this.props.onChange({ start, end })
+      }
       this.refresh()
     }
   }
