@@ -1,6 +1,6 @@
 {
   "name": "react-virtualscroll",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Virtual scroll for react with multi-colum support",
   "main": "dist/index.js",
   "scripts": {
